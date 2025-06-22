@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -611,8 +611,60 @@
         const toolTemplates = {
             upscaler: `
                 <div class="tool-interface">
-                    <h2>Image Upscaler</h2>
-                    <p>Enhance your image resolution up to 4x without losing quality</p>
+    <h2>Image Upscaler</h2>
+    <p>Enhance your image resolution up to 4x without losing quality 
+       <a href="#high-quality-upscaling" class="info-link" title="Learn about high quality upscaling">(Learn more)</a>
+    </p>
+    
+    <div class="upload-area" id="upload-area">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <p>Drag & drop your image here or click to browse</p>
+        <input type="file" id="image-upload" accept="image/*">
+    </div>
+    
+    <div class="options">
+        <div class="option">
+            <label for="scale-factor">Scale Factor:</label>
+            <select id="scale-factor">
+                <option value="2">2x</option>
+                <option value="3">3x</option>
+                <option value="4">4x</option>
+            </select>
+        </div>
+        
+        <div class="option">
+            <label for="enhance-mode">Enhancement:</label>
+            <select id="enhance-mode">
+                <option value="balanced">Balanced</option>
+                <option value="sharpness">Sharpness Focus</option>
+                <option value="smooth">Smooth Focus</option>
+            </select>
+        </div>
+    </div>
+    
+    <button class="process-btn" id="process-btn">Upscale Image</button>
+    
+    <div class="result-area hidden" id="result-area">
+        <div class="comparison">
+            <div class="original">
+                <h3>Original</h3>
+                <img id="original-img" src="" alt="Original Image">
+            </div>
+            <div class="processed">
+                <h3>Upscaled</h3>
+                <img id="processed-img" src="" alt="Processed Image">
+            </div>
+        </div>
+        <div class="download-options">
+            <button class="download-btn" id="download-btn">Download Image</button>
+            <select id="download-format">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="webp">WEBP</option>
+            </select>
+        </div>
+    </div>
+</div>
                     
                     <div class="upload-area" id="upload-area">
                         <i class="fas fa-cloud-upload-alt"></i>
